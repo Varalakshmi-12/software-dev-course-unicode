@@ -12,6 +12,8 @@ Use charCodeAt to get the Unicode code points of the first two characters.
 Add the two code points together and assign the result to a variable named sumCodePoints.
 Input:
 let inputString = "Hi";
+let sumCodePoints=inputString.charCodeAt(0)+inputString.charCodeAt(1);
+console.log(sumCodePoints);
 
 Expected Output:
 sumCodePoints: 177 // 'H' = 72, 'i' = 105, 72 + 105 = 177
@@ -28,6 +30,9 @@ Combine the two characters into a single string and assign it to a variable name
 Input:
 let codePoint1 = 65;
 let codePoint2 = 66;
+let combinedString=String.fromCharCode(codePoint1)+String.fromCharCode(codePoint2);
+console.log(combinedString);
+
 
 Expected Output:
 combinedString: "AB" // 65 = 'A', 66 = 'B', combined = "AB"
@@ -44,6 +49,9 @@ Input:
 let inputString = "Cat";
 let index1 = 0;
 let index2 = 2;
+let codePointDifference=Math.abs(inputString.charCodeAt(index1)-inputString.charCodeAt(index2));
+console.log(codePointDifference);
+
 
 Expected Output:
 codePointDifference: 16 // 'C' = 67, 't' = 116, |67 - 116| = 16
@@ -86,16 +94,21 @@ Assign the result to a variable named swappedString.
 //Starter Code
 // Task 1
 let inputString1 = "Code";
-let firstCodePoint; // Your code here
-let thirdCodePoint; // Your code here
+let firstCodePoint=inputString1.charCodeAt(0); // Your code here
+let thirdCodePoint=inputString1.charCodeAt(2); // Your code here
+console.log(firstCodePoint);
+console.log(thirdCodePoint);
 
 // Task 2
-let wordFromCodePoints; // Your code here
-
+let codePoints=[72, 101, 108, 108]; // Your code here
+let wordFromCodePoints=String.fromCharCode(codePoints[0])+String.fromCharCode(codePoints[1])+String.fromCharCode(codePoints[2])+String.fromCharCode(codePoints[3]);
+console.log(wordFromCodePoints);
 // Task 3
 let inputString2 = "Launch";
-let swappedString; // Your code here
-
+let code1=inputString2.charCodeAt(0);
+let code6=inputString2.charCodeAt(5);
+let swappedString=String.fromCharCode(code6)+inputString2.charAt(1)+inputString2.charAt(2)+inputString2.charAt(3)+inputString2.charAt(4)+String.fromCharCode(code1); // Your code here
+console.log(swappedString);
 // Log all results
 console.log({
   firstCodePoint,
@@ -103,3 +116,15 @@ console.log({
   wordFromCodePoints,
   swappedString,
 });
+
+Result:
+67
+100
+Hell
+hauncL
+{
+  firstCodePoint: 67,
+  thirdCodePoint: 100,
+  wordFromCodePoints: 'Hell',
+  swappedString: 'hauncL'
+}
